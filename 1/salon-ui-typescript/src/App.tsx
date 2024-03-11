@@ -2,31 +2,35 @@ import React from 'react';
 import './App.css';
 import './Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from "react-bootstrap";
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 
 function App() {
     return (
         <>
-            <Container>
-                <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                    <a href="/"
-                       className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                        {/*                        <svg className="bi me-2" width="40" height="32">
-                            <use href="#"></use>
-                        </svg>*/}
-                        <span className="fs-4">Ar Salon & Day Spa</span>
-                    </a>
-
-                    {/*                    <ul className="nav nav-pills">
-                        <li className="nav-item"><a href="#" className="nav-link active" aria-current="page">Home</a>
-                        </li>
-                        <li className="nav-item"><a href="#" className="nav-link">Features</a></li>
-                        <li className="nav-item"><a href="#" className="nav-link">Pricing</a></li>
-                        <li className="nav-item"><a href="#" className="nav-link">FAQs</a></li>
-                        <li className="nav-item"><a href="#" className="nav-link">About</a></li>
-                    </ul>*/}
-                </header>
-            </Container>
+            <Navbar expand="lg"
+                    className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <Container>
+                    <Navbar.Brand href="/" className="fs-4">Ar Salon & Day Spa</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                    {/*                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#link">Link</Nav.Link>
+                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">
+                                    Another action
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Divider/>
+                                <NavDropdown.Item href="#action/3.4">
+                                    Separated link
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>*/}
+                </Container>
+            </Navbar>
             <Container>
                 Edit <span style={{color: "red"}}>`src/App.js`</span> and save to reload.
             </Container>
