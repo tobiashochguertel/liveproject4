@@ -15,7 +15,7 @@ spring:
 server:
   port: 8081
 
-Salon:
+salon:
   name: AR Salon and Day Spa Services
   address: 1234 Main Street
   city: Anytown
