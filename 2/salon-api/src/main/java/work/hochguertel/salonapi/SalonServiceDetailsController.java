@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/api/services")
+@RestController()
+@RequestMapping("/api/services")
 public class SalonServiceDetailsController {
 
     private final Logger logger = LoggerFactory.getLogger(SalonServiceDetailsController.class);
