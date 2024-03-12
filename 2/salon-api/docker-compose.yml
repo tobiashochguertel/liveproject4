@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  #  app:
+  #    #    image: container.pkg.hochguertel.work/work.hochguertel/quiz-backend:latest
+  #    build:
+  #      context: .
+  #      dockerfile: Dockerfile
+  #    restart: always
+  #    ports:
+  #      - "8082:8082"
+  #    environment:
+  #      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/quiz
+  #      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: https://keycloak.vps9.hochguertel.work/realms/Quiz
+
+  #  mariadb:
+  #    image: mariadb
+  #    restart: always
+  #    ports:
+  #      - "3306:3306"
+  #    environment:
+  #      MARIADB_USER: AzureDiamond
+  #      MARIADB_PASSWORD: hunter2
+  #      MARIADB_ROOT_PASSWORD: hunter2
+  #      MARIADB_DATABASE: quiz
+  #    volumes:
+  #      - ./docker-volumes/mariadb:/var/lib/mysql
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./docker-volumes/postgresql:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@hochguertel.work
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - ./docker-volumes/pgadmin:/var/lib/pgadmin
