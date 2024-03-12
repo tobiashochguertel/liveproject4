@@ -99,21 +99,6 @@ const ChooseService = (props: ChooseServiceProps) => {
                                     </Card.Body>
                                 </Card>
                             </Col>
-                            /*                        <div key={index} className="card mb-4 shadow-sm">
-                                                        <div className="card-header">
-                                                            <h4 className="my-0 font-weight-normal">{item.name}</h4>
-                                                        </div>
-                                                        <div className="card-body">
-                                                            <h1 className="card-title pricing-card-title">${item.price} </h1>
-                                                            <ul className="list-unstyled mt-3 mb-4">
-                                                                <li>{item.description}</li>
-                                                                <li>{item.timeInMinutes} Minutes</li>
-                                                            </ul>
-                                                            <button type="button" onClick={(evt) => bookFor(item)}
-                                                                    className="btn btn-lg btn-block btn-outline-primary">Book Now
-                                                            </button>
-                                                        </div>
-                                                    </div>*/
                         );
                     })}
                 </Row>
